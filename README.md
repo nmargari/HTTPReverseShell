@@ -1,2 +1,2 @@
 # HTTPReverseShell
-Basic HTTP Reverse Shell
+Basic HTTP Reverse Shell in python
