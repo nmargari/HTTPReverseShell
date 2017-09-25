@@ -2,7 +2,7 @@ import BaseHTTPServer
 import os, cgi
 
 
-HOST_NAME = "192.168.1.3" #IP Address here
+HOST_NAME = "IP Address" #IP Address here
 PORT_NUMBER = 80
 
 class myHandler(BaseHTTPServer.BaseHTTPRequestHandler):
@@ -25,7 +25,7 @@ class myHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 				else:
 					print "[-] Unexpected POST request"
 				fs_up = fs["file"]
-				with open("/home/nmargari/Desktop/http.txt", "w") as o:
+				with open("Path to file", "w") as o: #Example: /home/user/file.txt
 					o.write(fs_up.file.read())
 					s.send_response(200)
 					s.end_headers()
